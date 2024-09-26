@@ -55,7 +55,7 @@ const MoviePage = ({ params }: { params: { id: string } }) => {
   return (
     <main >
       <button
-        onClick={() => router.back()}
+        onClick={() => router.push("/")}
         className="absolute font-bold md:left-20 md:top-16 left-8 top-12 mb-4"
       >
         <Back className=" h-24 w-24" />
