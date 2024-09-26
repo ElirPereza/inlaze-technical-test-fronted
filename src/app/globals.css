@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -18,10 +18,35 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: overlay; /* El scrollbar se superpone al contenido */
+  margin: 0;
+  padding: 0;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho del scrollbar */
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0); /* Color del thumb completamente transparente */
+  border: 1px solid rgba(255, 255, 255, 0.8); /* Borde blanco para el thumb */
+  border-radius: 10px; /* Bordes redondeados del thumb */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0); /* Fondo del track completamente transparente */
+}
+
+/* Para Firefox */
+.scrollbar-transparent {
+  scrollbar-width: thin; /* Hacer el scrollbar delgado */
+  scrollbar-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); /* Color del thumb y fondo transparentes */
 }
